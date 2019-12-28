@@ -1,19 +1,45 @@
 exports.database = {
   scholarships: [
     {
-      id: '123',
+      id: '1',
       name: 'Jauw International Fellowship Program 2020',
+      ongoing: true,
       country: 'TH',
+      department: '1',
+      education_level: '1',
+      scholarship_type: '1',
     },
     {
-      id: '456',
+      id: '2',
       name: 'Riffy International Fellowship Program 2020',
+      ongoing: false,
       country: 'US',
+      department: '2',
+      education_level: '2',
+      scholarship_type: '2',
     },
   ],
   countries: [
     { id: 'TH', name: 'Thailand' },
     { id: 'US', name: 'United States' },
+  ],
+  departments: [
+    { id: '1', name: 'ไม่จำกัด' },
+    { id: '2', name: 'วิศวกรรมศาสตร์' },
+    { id: '3', name: 'การบริหารและจัดการธุรกิจ' },
+    { id: '4', name: 'สถาปัตยกรรมและการออกแบบ' },
+    { id: '5', name: 'ภาษาศาสตร์' },
+    { id: '6', name: 'วิทยาศาสตร์ข้อมูล' },
+    { id: '7', name: 'ศิลปกรรมและมนุษยศาสตร์' },
+    { id: '8', name: 'จิตวิทยา' },
+    { id: '9', name: 'กฎหมาย' },
+    { id: '10', name: 'สังคมศาสตร์และนิเทศศาสตร์' },
+    { id: '11', name: 'การแพทย์' },
+    { id: '12', name: 'ครุศาสตร์และการศึกษา' },
+    { id: '13', name: 'สิ่งแวดล้อม' },
+    { id: '14', name: 'การเงิน' },
+    { id: '15', name: 'เศรษฐศาสตร์' },
+    { id: '16', name: 'วิทยาศาสตร์' },
   ],
   education_levels: [
     { id: '1', name: 'ปริญญาตรี' },
@@ -21,7 +47,10 @@ exports.database = {
     { id: '3', name: 'ปริญญาเอก' },
   ],
   scholarship_types: [
-    { id: '1', name: 'ปริญญาตรี' },
-    { id: '2', name: 'ปริญญาโท' },
+    { id: '1', name: 'ทุนเต็มจำนวน' },
+    { id: '2', name: 'ทุนไม่เต็มจำนวน' },
+    { id: '3', name: 'ทุนวิจัย' },
+    { id: '4', name: 'ทุนให้เปล่า' },
+    { id: '5', name: 'ทุนมีข้อผูกมัด' },
   ]
 }

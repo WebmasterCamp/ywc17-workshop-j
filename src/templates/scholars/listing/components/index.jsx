@@ -2,22 +2,29 @@ import React, { useState, useEffect } from 'react'
 
 import { Link } from 'gatsby'
 
+import { FaTimes } from 'react-icons/fa'
+
 import {
   Box,
   Button,
   Flex,
-  Heading,
   Icon,
+  Checkbox,
   Input,
   InputGroup,
   InputRightElement,
-  Stack,
   Spinner,
   Breadcrumb,
   BreadcrumbItem,
   Text,
+  Tag,
+  TagLabel,
+  TagIcon,
+  Heading,
+  Stack as ChakraStack,
 } from '@chakra-ui/core'
 
+import Stack from '../../../../core/components/stack'
 import Card from './card'
 import Collapse from './collapse'
 
@@ -26,7 +33,11 @@ import { searchFunction } from '../services/functions/search'
 const ScholarComponent = props => {
   const [input, setInput] = useState({
     query: '',
+    ongoing: false,
     countries: [],
+    departments: [],
+    education_levels: [],
+    scholarship_types: [],
   })
 
   const [isScholarSearching, setIsScholarSearching] = useState(true)
@@ -42,6 +53,8 @@ const ScholarComponent = props => {
       setCompareModePool([...compareModePool, pool])
     }
   }
+
+  const compareModalHandler = () => {}
 
   useEffect(() => {
     setIsScholarSearching(true)
@@ -76,9 +89,12 @@ const ScholarComponent = props => {
             flexDirection='column'
             justifyContent='space-between'>
             <Box>
-              <Text>ตัวช่วยในการค้นหา</Text>
-              <Stack space={4} py={4}>
-                <InputGroup>
+              <Heading size='lg' pb={4}>ตัวช่วยในการค้นหา</Heading>
+              <Flex pt={4} pb={6} justifyContent='center'>
+                <Checkbox isChecked={input.ongoing} onChange={() => setInput(prev => ({...prev, ongoing: !prev.ongoing}))}><Heading size='sm'>กำลังเปิดรับสมัคร</Heading></Checkbox>
+              </Flex>
+              <Stack space={4} flexWrap='wrap'>
+                <InputGroup boxShadow='0px 3px 6px #00000029' borderRadius='4px'>
                   <Input
                     placeholder='Search'
                     onChange={e => {
@@ -91,7 +107,7 @@ const ScholarComponent = props => {
                   />
                 </InputGroup>
                 <Collapse
-                  title='Country'
+                  title='ประเทศ'
                   options={props.pageContext.countries.map(o => ({
                     key: o.id,
                     name: o.name,
@@ -101,31 +117,87 @@ const ScholarComponent = props => {
                   }
                 />
                 <Collapse
+                  title='สาขาวิชา'
+                  options={props.pageContext.departments.map(o => ({
+                    key: o.id,
+                    name: o.name,
+                  }))}
+                  onSelect={val =>
+                    setInput(prev => ({ ...prev, departments: val }))
+                  }
+                />
+                <Collapse
                   title='ระดับการศึกษา'
                   options={props.pageContext.education_levels.map(o => ({
                     key: o.id,
                     name: o.name,
                   }))}
-                  onSelect={val => console.log(val)} // TODO
+                  onSelect={val =>
+                    setInput(prev => ({ ...prev, education_levels: val }))
+                  }
+                />
+                <Collapse
+                  title='ประเภททุน'
+                  options={props.pageContext.scholarship_types.map(o => ({
+                    key: o.id,
+                    name: o.name,
+                  }))}
+                  onSelect={val =>
+                    setInput(prev => ({ ...prev, scholarship_types: val }))
+                  }
                 />
               </Stack>
             </Box>
             <Flex flexDirection='column'>
               {isCompareMode ? (
-                <Text textAlign='center' fontWeight='bold' pb={4}>
-                  {compareModePool.length} Selected
-                </Text>
+                <ChakraStack py={2} mb='30px'>
+                  {compareModePool.map(pool => (
+                    <Tag
+                      color='white'
+                      bg='#F98770'
+                      fontSize='11px'
+                      borderRadius='10px'
+                      py={0}
+                      maxWidth='fit-content'>
+                      <TagLabel>{pool.name}</TagLabel>
+                      <TagIcon
+                        onClick={() => comparePoolHandler(pool)}
+                        icon={FaTimes}
+                        cursor='pointer'
+                      />
+                    </Tag>
+                  ))}
+                </ChakraStack>
               ) : null}
-              <Button
-                alignSelf='center'
-                color='white'
-                bg='#F98770'
-                borderRadius={30}
-                px={30}
-                onClick={() => setIsCompareMode(prev => !prev)}
-                fontWeight='bold'>
-                {isCompareMode ? 'CANCEL' : 'COMPARE'}
-              </Button>
+              <Flex justifyContent='center'>
+                {isCompareMode ? (
+                  <Link
+                    to={`/scholars/comparing/${compareModePool
+                      .map(({ id }) => id)
+                      .join('/')}`}>
+                    <Button
+                      color='white'
+                      bg='#F98770'
+                      borderRadius={30}
+                      px='30px'
+                      mx='10px'
+                      fontWeight='bold'
+                      isDisabled={compareModePool.length < 2}>
+                      เปรียบเทียบ
+                    </Button>
+                  </Link>
+                ) : null}
+                <Button
+                  color='white'
+                  bg='#F98770'
+                  borderRadius={30}
+                  px='30px'
+                  mx='10px'
+                  onClick={() => setIsCompareMode(prev => !prev)}
+                  fontWeight='bold'>
+                  {isCompareMode ? 'CANCEL' : 'COMPARE'}
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
         </Box>
@@ -137,6 +209,10 @@ const ScholarComponent = props => {
               {scholarResult.map(data => (
                 <Card
                   data={data}
+                  countries={props.pageContext.countries}
+                  departments={props.pageContext.departments}
+                  education_levels={props.pageContext.education_levels}
+                  scholarship_types={props.pageContext.scholarship_types}
                   onSelect={comparePoolHandler}
                   compare={{
                     mode: isCompareMode,

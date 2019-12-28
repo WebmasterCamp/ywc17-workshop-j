@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 const HTMLComponent = props => {
   const {
@@ -9,8 +9,6 @@ const HTMLComponent = props => {
     body,
     postBodyComponents,
   } = props
-
-  const { GATSBY_ENV = 'production' } = process.env
 
   return (
     <html {...htmlAttributes}>
@@ -24,7 +22,7 @@ const HTMLComponent = props => {
         <link href='/icon.png' rel='shortcut icon' type='image/png' />
         <link href='/icon.png' rel='apple-touch-icon-precomposed' />
         <link
-          href='https://fonts.googleapis.com/css?family=Kanit&font-display=swap'
+          href='https://fonts.googleapis.com/css?family=Prompt&display=swap'
           rel='stylesheet'
         />
         {headComponents}
