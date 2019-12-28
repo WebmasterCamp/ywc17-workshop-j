@@ -1,5 +1,8 @@
 {
-  "name": "ywc17-workshop-j",
+  "name": "ywc17-workshop-a",
   "alias": ["workshop-j.ywc17.ywc.in.th"],
-  "regions": ["all"]
-}
+  "regions": ["all"],
+  "builds": [
+    { "src": "**/*", "use": "@now/static" }
+  ]
+} 

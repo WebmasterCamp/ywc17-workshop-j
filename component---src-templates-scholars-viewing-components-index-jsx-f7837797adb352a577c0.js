@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{TPOp:function(n,e,t){"use strict";t.r(e);var u=t("FdF9"),a=t("qKvR");e.default=function(n){return Object(a.d)(u.default.Fragment,null,"yeet")}}}]);
+//# sourceMappingURL=component---src-templates-scholars-viewing-components-index-jsx-f7837797adb352a577c0.js.map
