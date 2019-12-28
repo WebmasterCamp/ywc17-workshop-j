@@ -107,7 +107,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  await database.scholarships.map(async data => {
+  await Promise.all(database.scholarships.map(async data => {
     const res = await graphql(`
       query Scholarship3Query {
         image: file(relativePath: {eq: "scholarship.${data.id}.png"}) {
@@ -138,10 +138,10 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       },
     })
-  })
+  }))
 
-  await database.scholarships.map(async data1 => {
-    await database.scholarships.map(async data2 => {
+  await Promise.all(database.scholarships.map(async data1 => {
+    await Promise.all(database.scholarships.map(async data2 => {
       if (_.union([data1, data2]).length === 2) {
         const res12 = await graphql(`
           query Scholarship12Query {
@@ -193,7 +193,7 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         })
 
-        await database.scholarships.map(async data3 => {
+        await Promise.all(database.scholarships.map(async data3 => {
           if (_.union([data1, data2, data3]).length === 3) {
             const res3 = await graphql(`
               query Scholarship3Query {
@@ -236,10 +236,10 @@ exports.createPages = async ({ graphql, actions }) => {
               },
             })
           }
-        })
+        }))
       }
-    })
-  })
+    }))
+  }))
 
   return true
 }

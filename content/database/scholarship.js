@@ -6,15 +6,17 @@ exports.database = {
       ongoing: true,
       country: 'TH',
       department: '1',
-      education_level: '1',
+      education_level: '3',
       scholarship_type: '1',
       rating: 4,
+      duration: '4-6 เดือน',
+      due_date: '31 มีนาคม 2563'
     },
     {
       id: '2',
-      name: 'Riffy International Fellowship Program 2020',
-      ongoing: false,
-      country: 'US',
+      name: 'ทุนมหาวิทยาลัยซีหนาน เมืองฉงชิ่ง (Southwest University)',
+      ongoing: true,
+      country: 'CHINA',
       department: '2',
       education_level: '2',
       scholarship_type: '2',
@@ -23,7 +25,10 @@ exports.database = {
   ],
   countries: [
     { id: 'TH', name: 'Thailand' },
+    { id: 'UK', name: 'United Kingdom' },
     { id: 'US', name: 'United States' },
+    { id: 'JAP', name: 'Japan' },
+    { id: 'CHINA', name: 'China' },
   ],
   departments: [
     { id: '1', name: 'ไม่จำกัด' },

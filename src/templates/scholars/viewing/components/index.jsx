@@ -13,6 +13,7 @@ import {
   Flex,
   Heading,
   Grid,
+  Image,
 } from '@chakra-ui/core'
 
 const ScholariewingComponent = props => {
@@ -84,6 +85,10 @@ const ScholariewingComponent = props => {
             </Grid>
           </Box>
         </Flex>
+        <Box mb={6}>
+          <Image src='/bar.png' mx='auto'/>
+          <Image src='/step.png' mx='auto' />
+        </Box>
         <Box mb={6}>
           <Text fontWeight='bold' mr={2}>
             เกี่ยวกับมหาวิทยาลัย:
