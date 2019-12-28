@@ -1,15 +1,6 @@
 import React, { ReactNode } from 'react'
 
-interface IProps {
-  body: string
-  bodyAttributes: string
-  headComponents: ReactNode
-  htmlAttributes: string
-  preBodyComponents: ReactNode
-  postBodyComponents: ReactNode
-}
-
-const HTMLComponent: React.FC<IProps> = props => {
+const HTMLComponent = props => {
   const {
     htmlAttributes,
     headComponents,
@@ -55,12 +46,6 @@ const HTMLComponent: React.FC<IProps> = props => {
         />
         {postBodyComponents}
       </body>
-      {GATSBY_ENV === 'production' || GATSBY_ENV === 'staging' ? (
-        <script
-          async={true}
-          src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-        />
-      ) : null}
     </html>
   )
 }

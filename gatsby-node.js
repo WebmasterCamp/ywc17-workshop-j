@@ -2,11 +2,24 @@ const fs = require('fs')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   // Define createPage functions
-//   const { createPage } = actions
-//   return true
-// }
+const { database } = require('./content/database/scholarship')
+
+exports.createPages = async ({ graphql, actions }) => {
+  // Define createPage functions
+  const { createPage } = actions
+
+  database.map(data => {
+    createPage({
+      path: `/scholars/${data.id}`,
+      component: path.resolve(`./src/templates/scholars/components/index.jsx`),
+      context: {
+        data
+      },
+    })
+  })
+
+  return true
+}
 
 // exports.onCreateNode = ({ node, actions, getNode }) => {
 //   const { createNodeField } = actions
