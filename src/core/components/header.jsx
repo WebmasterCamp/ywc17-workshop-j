@@ -21,13 +21,16 @@ const HeaderComponent = props => {
         </Link>
         <Flex align='center' justifyContent='center'>
           <Box px={4} color='white'>
-            <Link to='/'>Home</Link>
+            <Link to='/scholars'>ค้นหาทุน</Link>
           </Box>
           <Box px={4} color='white'>
-            <Link to='/scholars'>Scholars</Link>
+            บทความ
+          </Box>
+          <Box px={4} color='white'>
+            เกี่ยวกับเรา
           </Box>
           <Button bg='#F98770' color='white' ml={2}>
-            Login
+            เข้าสู่ระบบ
           </Button>
         </Flex>
       </Flex>
