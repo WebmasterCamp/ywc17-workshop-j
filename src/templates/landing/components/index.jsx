@@ -9,6 +9,7 @@ import { FaSearch } from 'react-icons/fa'
 import {
   Box,
   Flex,
+  Divider,
   Stack as ChakraStack,
   Input,
   Image,
@@ -155,6 +156,38 @@ const LandingComponent = props => {
                   </Text>
                 </Flex>
               </Flex>
+            </Box>
+          </Box>
+        </Flex>
+      </Box>
+      <Box pt={48}>
+        <Heading size='xl' textAlign='center' fontWeight='bold'>BLOGS</Heading>
+        <Flex justifyContent='center'>
+          <Box width={18 / 24} pt={10}>
+            <Link to={`/blog/soc`}><Heading size='sm'>รู้ก่อนเขียนก่อน! 3 เทคนิค เขียน SOP อย่างไร ให้ทรงพลัง</Heading></Link>
+            <Divider py={2} />
+            <Link to={`/blog/chevening`}><Heading size='sm'>รู้หรือไม่..ทุนอังกฤษไม่ได้มีแค่ Chevening</Heading></Link>
+          </Box>
+        </Flex>
+      </Box>
+      <Box pt={48}>
+        <Image src='/user.png' />
+      </Box>
+      <Box pt={48} pb={64}>
+        <Heading size='xl' textAlign='center' fontWeight='bold'>FAQ</Heading>
+        <Flex justifyContent='center'>
+          <Box width={18 / 24}>
+            <Box pt={10}>
+              <Text fontSize='md' fontWeight='bold'>สมัครขอทุนเรียนต่อตอนไหนดี?</Text>
+              <Text>ทุนสำหรับเรียนต่อต่างประเทศนั้นมีอยู่มาก โดยส่วนใหญ่แล้ว มักจะเปิดรับสมัครในช่วงต้นปีการศึกษาของประเทศนั้น ๆ หรือก็คือช่วงฤดูร้อนนั่นเอง อย่างไรก็ตาม เนื่องจากมีทุนนั้นมีอยู่หลากหลาย จึงควรศึกษาล่วงหน้าว่าทุนที่สนใจนั้น เปิดรับสมัครและปิดรับสมัครในช่วงเวลาไหน</Text>
+            </Box>
+            <Box pt={10}>
+              <Text fontSize='md' fontWeight='bold'>จะสมัครทุน ต้องเตรียมอะไรบ้าง?</Text>
+              <Text>ทุนศึกษาต่อต่างประเทศนั้นมีด้วยกันหลากหลายรูปแบบ ไม่ว่าจะเป็นทุนวิจัย ทุนเต็มจำนวน ทุนไม่เต็มจำนวน เป็นต้น ซึ่งโดยทั่วไปแล้วมักจะต้องการคะแนนสอบวัดระดับทางภาษาพื้นฐาน เช่น TOEFL, IELTS รวมถึงเกรด หรือประสบการณ์การทำงานอย่างไรก็ตาม ผู้ที่สนใจควรอ่านเอกสารประกาศรับสมัครให้ครบถ้วน เพราะแต่ละทุนนั้นมักจะมีเกณฑ์คุณสมบัติที่แตกต่างกันออกไป</Text>
+            </Box>
+            <Box pt={10}>
+              <Text fontSize='md' fontWeight='bold'>เกรดไม่ถึง 2.50 จะยื่นขอทุนได้ไหม?</Text>
+              <Text>ได้ มีทุนจำนวนมากที่เปิดรับสมัครแต่ไม่ใช้เกรดในการตัดสินใจ โดยอาจใช้คุณสมบัติอื่นแทน เช่น กิจกรรมจิตอาสา ความเป็นเลิศทางด้านกีฬา ผลงานการวิจัย เป็นต้น</Text>
             </Box>
           </Box>
         </Flex>

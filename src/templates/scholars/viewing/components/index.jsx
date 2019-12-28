@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 
 import Img from 'gatsby-image'
 
+import { FaBookmark } from 'react-icons/fa'
+
 import {
   Icon,
   Box,
@@ -14,6 +16,7 @@ import {
   Heading,
   Grid,
   Image,
+  Button,
 } from '@chakra-ui/core'
 
 const ScholariewingComponent = props => {
@@ -36,10 +39,24 @@ const ScholariewingComponent = props => {
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <Text color='#F98770' fontFamily='Prompt'>{data.name}</Text>
+          <Text color='#F98770' fontFamily='Prompt'>
+            {data.name}
+          </Text>
         </BreadcrumbItem>
       </Breadcrumb>
-      <Box bg='white' p={12} mt={6}>
+      <Box bg='white' p={12} mt={6} position='relative'>
+        <Flex
+          bg='#F98770'
+          borderRadius='50%'
+          width='30px'
+          height='30px'
+          justifyContent='center'
+          align='center'
+          position='absolute'
+          right={50}
+          cursor='pointer'>
+          <FaBookmark color='white' />
+        </Flex>
         <Flex mb={6}>
           <Box w='150px' h='150px'>
             {data.image ? <Img fluid={data.image} /> : null}
@@ -76,18 +93,24 @@ const ScholariewingComponent = props => {
                 <Text>- ผลการเรียน 4.00 ขึ้นไป (4 เทอม)</Text>
                 <Text>- ผลสอบ SHK4 180 ขึ้นไป</Text>
               </Box>
-              <Flex>
+              <Box>
                 <Text fontWeight='bold' mr={2}>
-                  ระยะเวลา:{' '}
+                  สิทธิประโยชน์:{' '}
                 </Text>
-                <Text>4 ปี</Text>
-              </Flex>
+                <Text>- ค่าลงทะเบียนเรียน</Text>
+                <Text>- ค่าเทอมตลอดหลักสูตรปริญญาตรี</Text>
+                <Text>- ค่าธรรมเนียมและค่าใช้จ่ายในการฝึกงาน</Text>
+                <Text>- ค่าประกันสุขภาพ</Text>
+                <Text>
+                  - หากมีผลการเรียนดี มีสิทธิ์ได้รับ ค่าครองชีพ เดือนละ 5,000 -
+                  6,000 บาท
+                </Text>
+              </Box>
             </Grid>
           </Box>
         </Flex>
         <Box mb={6}>
-          <Image src='/bar.png' mx='auto'/>
-          <Image src='/step.png' mx='auto' />
+          <Image src='/bar.png' mx='auto' />
         </Box>
         <Box mb={6}>
           <Text fontWeight='bold' mr={2}>
@@ -172,6 +195,11 @@ const ScholariewingComponent = props => {
             </Box>
           </Box>
         </Box>
+        <Flex justifyContent='center'>
+          <Button bg='#F98770' color='white' mt={6}>
+            รับข่าวสารเกี่ยวกับทุนเรียนต่อต่างประเทศต่าง ๆ
+          </Button>
+        </Flex>
       </Box>
     </Box>
   )

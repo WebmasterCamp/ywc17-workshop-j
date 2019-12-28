@@ -59,7 +59,7 @@ const ComparingComponent = props => {
         <Box>วันรับสมัครทุน</Box>
         {props.pageContext.data.map(
           data =>
-            console.log(data) || (
+            (
               <Box>
                 {data.start_date} - {data.due_date}
               </Box>
@@ -68,13 +68,13 @@ const ComparingComponent = props => {
 
         <Box>หลักสูตร</Box>
         {props.pageContext.data.map(
-          data => console.log(data) || <Box>{data.duration}</Box>
+          data => <Box>{data.duration}</Box>
         )}
 
         <Box>ประเภททุน</Box>
         {props.pageContext.data.map(
           data =>
-            console.log(data) || (
+            (
               <Box>
                 {
                   database.scholarship_types.filter(
@@ -87,7 +87,7 @@ const ComparingComponent = props => {
 
         <Box>จำนวนเปิดรับ</Box>
         {props.pageContext.data.map(
-          data => console.log(data) || <Box>{data.amount}</Box>
+          data => <Box>{data.amount}</Box>
         )}
 
         <Box>คุณสมบัติ</Box>
