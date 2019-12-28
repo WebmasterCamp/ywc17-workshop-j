@@ -8,7 +8,8 @@ const GlobalComponent = props => {
       styles={css`
         html,
         body,
-        #__next {
+        #___gatsby,
+        #gatsby-focus-wrapper {
           height: 100%;
         }
       `}

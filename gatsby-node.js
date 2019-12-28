@@ -8,10 +8,18 @@ exports.createPages = async ({ graphql, actions }) => {
   // Define createPage functions
   const { createPage } = actions
 
+  createPage({
+    path: '/scholars',
+    component: path.resolve('./src/templates/scholars/listing/components/index.jsx'),
+    context: {
+      data: database,
+    },
+  })
+
   database.map(data => {
     createPage({
       path: `/scholars/${data.id}`,
-      component: path.resolve(`./src/templates/scholars/components/index.jsx`),
+      component: path.resolve(`./src/templates/scholars/viewing/components/index.jsx`),
       context: {
         data
       },
