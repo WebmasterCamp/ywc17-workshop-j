@@ -35,52 +35,59 @@ const LandingComponent = props => {
   return (
     <React.Fragment>
       <Box pt={48} position='relative' pb={400}>
-          <Image src='/undraw_analyze_17kw.svg' position='absolute' right={0} top={200} />
-          <Box position='absolute' left={0} right={0} top={320}>
-            <Heading size='2xl' fontFamily='Prompt' width={1 / 2}>
-              พบกับทุนมากมายที่เหมาะสำหรับคุณ ค้นหาตอนนี้เลย!
-            </Heading>
-            <Box
-              bg='#E7E3E4'
-              boxShadow='0px 3px 6px #00000029'
-              width={8 / 24}
-              p={6}
-              my={4}>
-              <Stack flexWrap='wrap' space={4}>
-                <Input
-                  fontFamily='Prompt'
-                  placeholder='ค้นหาทุน'
-                  size='md'
-                  borderRadius='4px'
-                  boxShadow='0px 3px 6px #00000029'
-                />
-                <Input
-                  placeholder='สาขา'
-                  size='md'
-                  fontFamily='Prompt'
-                  borderRadius='4px'
-                  boxShadow='0px 3px 6px #00000029'
-                />
-                <Input
-                  placeholder='ระดับการศึกษา'
-                  size='md'
-                  fontFamily='Prompt'
-                  borderRadius='4px'
-                  boxShadow='0px 3px 6px #00000029'
-                />
-              </Stack>
-              <Flex justifyContent='center'>
-                <Link to='/scholars'>
-                  <Button color='white' bg='#F98770' borderRadius={30}>
-                    <Flex alignItems='center'>
-                      <Text pr={2} fontFamily='Prompt'>ค้นหาทุน</Text>
-                      <FaSearch />
-                    </Flex>
-                  </Button>
-                </Link>
-              </Flex>
-            </Box>
+        <Image
+          src='/undraw_analyze_17kw.svg'
+          position='absolute'
+          right={0}
+          top={200}
+        />
+        <Box position='absolute' left={0} right={0} top={320}>
+          <Heading size='2xl' fontFamily='Prompt' width={1 / 2}>
+            พบกับทุนมากมายที่เหมาะสำหรับคุณ ค้นหาตอนนี้เลย!
+          </Heading>
+          <Box
+            bg='#E7E3E4'
+            boxShadow='0px 3px 6px #00000029'
+            width={8 / 24}
+            p={6}
+            my={4}>
+            <Stack flexWrap='wrap' space={4}>
+              <Input
+                fontFamily='Prompt'
+                placeholder='ค้นหาทุน'
+                size='md'
+                borderRadius='4px'
+                boxShadow='0px 3px 6px #00000029'
+              />
+              <Input
+                placeholder='สาขา'
+                size='md'
+                fontFamily='Prompt'
+                borderRadius='4px'
+                boxShadow='0px 3px 6px #00000029'
+              />
+              <Input
+                placeholder='ระดับการศึกษา'
+                size='md'
+                fontFamily='Prompt'
+                borderRadius='4px'
+                boxShadow='0px 3px 6px #00000029'
+              />
+            </Stack>
+            <Flex justifyContent='center'>
+              <Link to='/scholars'>
+                <Button color='white' bg='#F98770' borderRadius={30}>
+                  <Flex alignItems='center'>
+                    <Text pr={2} fontFamily='Prompt'>
+                      ค้นหาทุน
+                    </Text>
+                    <FaSearch />
+                  </Flex>
+                </Button>
+              </Link>
+            </Flex>
           </Box>
+        </Box>
       </Box>
       <Box pt={64}>
         <Heading size='lg' textAlign='center' fontFamily='Prompt'>
@@ -113,30 +120,57 @@ const LandingComponent = props => {
             </Heading>
             <Box pt={8}>
               <Flex flexWrap='wrap'>
-                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                <Flex
+                  flexWrap='wrap'
+                  width={1 / 2}
+                  p={8}
+                  justifyContent='center'>
                   <Image width='125px' src='/conversation.svg' />
-                  <Heading width='100%' size='md' textAlign='center' pt={2} fontFamily='Prompt'>
+                  <Heading
+                    width='100%'
+                    size='md'
+                    textAlign='center'
+                    pt={2}
+                    fontFamily='Prompt'>
                     บอก… เรื่องน่ารู้สำหรับคนอยากเรียนต่อ
                   </Heading>
                   <Text width='100%' textAlign='center' fontFamily='Prompt'>
                     เรื่องต้องรู้ สำหรับผู้อยากเรียนต่อ ทั้งรีวิว ฮาวทู ไลฟ์ไตล์
                     เคล็ดลับการ ยื่นสมัครทุน และเรื่องราวสนุก ๆ อีกมากมาย
-                    ที่บอกบุญคัดสรรมาบอกคุณ
+                    ที่บอกทุนคัดสรรมาบอกคุณ
                   </Text>
                 </Flex>
-                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                <Flex
+                  flexWrap='wrap'
+                  width={1 / 2}
+                  p={8}
+                  justifyContent='center'>
                   <Image width='125px' src='/heart.svg' />
-                  <Heading width='100%' size='md' textAlign='center' pt={2} fontFamily='Prompt'>
+                  <Heading
+                    width='100%'
+                    size='md'
+                    textAlign='center'
+                    pt={2}
+                    fontFamily='Prompt'>
                     บอก… ว่าทุนไหนที่ใช่คุณ
                   </Heading>
                   <Text width='100%' textAlign='center' fontFamily='Prompt'>
-                    เหมาะกับทุนไหน เราบอกได้ ด้วยฟีลเตอร์ของบอกบุญ
+                    เหมาะกับทุนไหน เราบอกได้ ด้วยฟีลเตอร์ของบอกทุน
                     คุณจึงสามารถค้นพบทุนที่เหมาะสม กับคุณได้อย่างง่ายแค่ปลายนิ้ว
                   </Text>
                 </Flex>
-                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                <Flex
+                  flexWrap='wrap'
+                  width={1 / 2}
+                  p={8}
+                  justifyContent='center'>
                   <Image width='125px' src='/contract.svg' />
-                  <Heading width='100%' size='md' textAlign='center' pt={2} fontFamily='Prompt'>
+                  <Heading
+                    width='100%'
+                    size='md'
+                    textAlign='center'
+                    pt={2}
+                    fontFamily='Prompt'>
                     บอก... วิธีจัดการกับเอกสารสุดยุ่งยาก
                   </Heading>
                   <Text width='100%' textAlign='center' fontFamily='Prompt'>
@@ -145,9 +179,18 @@ const LandingComponent = props => {
                     ผู้เชี่ยวชาญที่น่าเชื่อถือ
                   </Text>
                 </Flex>
-                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                <Flex
+                  flexWrap='wrap'
+                  width={1 / 2}
+                  p={8}
+                  justifyContent='center'>
                   <Image width='125px' src='/clock.svg' />
-                  <Heading width='100%' size='md' textAlign='center' pt={2} fontFamily='Prompt'>
+                  <Heading
+                    width='100%'
+                    size='md'
+                    textAlign='center'
+                    pt={2}
+                    fontFamily='Prompt'>
                     บอก… ว่าถึงเวลาต้องทำอะไร
                   </Heading>
                   <Text width='100%' textAlign='center' fontFamily='Prompt'>
@@ -161,12 +204,29 @@ const LandingComponent = props => {
         </Flex>
       </Box>
       <Box pt={48}>
-        <Heading size='xl' textAlign='center' fontWeight='bold'>BLOGS</Heading>
+        <Heading size='xl' textAlign='center' fontWeight='bold'>
+          BLOGS
+        </Heading>
         <Flex justifyContent='center'>
           <Box width={18 / 24} pt={10}>
-            <Link to={`/blog/soc`}><Heading size='sm'>รู้ก่อนเขียนก่อน! 3 เทคนิค เขียน SOP อย่างไร ให้ทรงพลัง</Heading></Link>
-            <Divider py={2} />
-            <Link to={`/blog/chevening`}><Heading size='sm'>รู้หรือไม่..ทุนอังกฤษไม่ได้มีแค่ Chevening</Heading></Link>
+            <Link to={`/blog/soc`}>
+              <Heading size='sm'>
+                รู้ก่อนเขียนก่อน! 3 เทคนิค เขียน SOP อย่างไร ให้ทรงพลัง
+              </Heading>
+            </Link>
+            <Divider />
+            <Link to={`/blog/chevening`}>
+              <Heading size='sm'>
+                รู้หรือไม่..ทุนอังกฤษไม่ได้มีแค่ Chevening
+              </Heading>
+            </Link>
+            <Divider />
+            <Link to={`/blog/marketing`}>
+              <Heading size='sm'>
+                รู้ไว้ไม่พลาด! 10 อันดับมหาวิทยาลัยในประเทศอังกฤษ ที่ต้องไป
+                ถ้าอยากได้งาน! - Marketing
+              </Heading>
+            </Link>
           </Box>
         </Flex>
       </Box>
@@ -174,28 +234,58 @@ const LandingComponent = props => {
         <Image src='/user.png' />
       </Box>
       <Box pt={48}>
-        <Heading size='xl' textAlign='center' fontWeight='bold'>FAQ</Heading>
+        <Heading size='xl' textAlign='center' fontWeight='bold'>
+          FAQ
+        </Heading>
         <Flex justifyContent='center'>
           <Box width={18 / 24}>
             <Box pt={10}>
-              <Text fontSize='md' fontWeight='bold'>สมัครขอทุนเรียนต่อตอนไหนดี?</Text>
-              <Text>ทุนสำหรับเรียนต่อต่างประเทศนั้นมีอยู่มาก โดยส่วนใหญ่แล้ว มักจะเปิดรับสมัครในช่วงต้นปีการศึกษาของประเทศนั้น ๆ หรือก็คือช่วงฤดูร้อนนั่นเอง อย่างไรก็ตาม เนื่องจากมีทุนนั้นมีอยู่หลากหลาย จึงควรศึกษาล่วงหน้าว่าทุนที่สนใจนั้น เปิดรับสมัครและปิดรับสมัครในช่วงเวลาไหน</Text>
+              <Text fontSize='md' fontWeight='bold'>
+                สมัครขอทุนเรียนต่อตอนไหนดี?
+              </Text>
+              <Text>
+                ทุนสำหรับเรียนต่อต่างประเทศนั้นมีอยู่มาก โดยส่วนใหญ่แล้ว
+                มักจะเปิดรับสมัครในช่วงต้นปีการศึกษาของประเทศนั้น ๆ
+                หรือก็คือช่วงฤดูร้อนนั่นเอง อย่างไรก็ตาม
+                เนื่องจากมีทุนนั้นมีอยู่หลากหลาย
+                จึงควรศึกษาล่วงหน้าว่าทุนที่สนใจนั้น
+                เปิดรับสมัครและปิดรับสมัครในช่วงเวลาไหน
+              </Text>
             </Box>
             <Box pt={10}>
-              <Text fontSize='md' fontWeight='bold'>จะสมัครทุน ต้องเตรียมอะไรบ้าง?</Text>
-              <Text>ทุนศึกษาต่อต่างประเทศนั้นมีด้วยกันหลากหลายรูปแบบ ไม่ว่าจะเป็นทุนวิจัย ทุนเต็มจำนวน ทุนไม่เต็มจำนวน เป็นต้น ซึ่งโดยทั่วไปแล้วมักจะต้องการคะแนนสอบวัดระดับทางภาษาพื้นฐาน เช่น TOEFL, IELTS รวมถึงเกรด หรือประสบการณ์การทำงานอย่างไรก็ตาม ผู้ที่สนใจควรอ่านเอกสารประกาศรับสมัครให้ครบถ้วน เพราะแต่ละทุนนั้นมักจะมีเกณฑ์คุณสมบัติที่แตกต่างกันออกไป</Text>
+              <Text fontSize='md' fontWeight='bold'>
+                จะสมัครทุน ต้องเตรียมอะไรบ้าง?
+              </Text>
+              <Text>
+                ทุนศึกษาต่อต่างประเทศนั้นมีด้วยกันหลากหลายรูปแบบ
+                ไม่ว่าจะเป็นทุนวิจัย ทุนเต็มจำนวน ทุนไม่เต็มจำนวน เป็นต้น
+                ซึ่งโดยทั่วไปแล้วมักจะต้องการคะแนนสอบวัดระดับทางภาษาพื้นฐาน เช่น
+                TOEFL, IELTS รวมถึงเกรด หรือประสบการณ์การทำงานอย่างไรก็ตาม
+                ผู้ที่สนใจควรอ่านเอกสารประกาศรับสมัครให้ครบถ้วน
+                เพราะแต่ละทุนนั้นมักจะมีเกณฑ์คุณสมบัติที่แตกต่างกันออกไป
+              </Text>
             </Box>
             <Box pt={10}>
-              <Text fontSize='md' fontWeight='bold'>เกรดไม่ถึง 2.50 จะยื่นขอทุนได้ไหม?</Text>
-              <Text>ได้ มีทุนจำนวนมากที่เปิดรับสมัครแต่ไม่ใช้เกรดในการตัดสินใจ โดยอาจใช้คุณสมบัติอื่นแทน เช่น กิจกรรมจิตอาสา ความเป็นเลิศทางด้านกีฬา ผลงานการวิจัย เป็นต้น</Text>
+              <Text fontSize='md' fontWeight='bold'>
+                เกรดไม่ถึง 2.50 จะยื่นขอทุนได้ไหม?
+              </Text>
+              <Text>
+                ได้ มีทุนจำนวนมากที่เปิดรับสมัครแต่ไม่ใช้เกรดในการตัดสินใจ
+                โดยอาจใช้คุณสมบัติอื่นแทน เช่น กิจกรรมจิตอาสา
+                ความเป็นเลิศทางด้านกีฬา ผลงานการวิจัย เป็นต้น
+              </Text>
             </Box>
           </Box>
         </Flex>
       </Box>
       <Box pt={48} pb={64}>
-        <Heading size='xl' textAlign='center' fontWeight='bold'>SOCIALS</Heading>
+        <Heading size='xl' textAlign='center' fontWeight='bold'>
+          SOCIALS
+        </Heading>
         <Flex justifyContent='center' pt={10}>
-          <ChakraLink href="https://facebook.com/BoxThun" isExternal>Facebook</ChakraLink>
+          <ChakraLink href='https://facebook.com/BoxThun' isExternal>
+            Facebook
+          </ChakraLink>
         </Flex>
       </Box>
     </React.Fragment>
