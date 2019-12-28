@@ -46,17 +46,13 @@ const ComparingComponent = props => {
         gap={6}>
         <Box></Box>
         {props.pageContext.data.map(data => (
-          <Box>
-            <Box w='150px' h='150px'>
+          <Box textAlign='center'>
+            <Box w='150px' h='150px' mx='auto' mb={4}>
               <Img fluid={data.image} />
             </Box>
             <Text>{data.name}</Text>
           </Box>
         ))}
-
-        <Box></Box>
-        <Box>2 สิงหาคม - 20 สิงหาคม 2562</Box>
-        <Box>2 สิงหาคม - 20 สิงหาคม 2562</Box>
 
         <Box>วันรับสมัครทุน</Box>
         <Box>2 สิงหาคม - 20 สิงหาคม 2562</Box>

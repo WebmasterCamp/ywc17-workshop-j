@@ -83,16 +83,16 @@ const LandingComponent = props => {
           <Box width={18 / 24}>
             <Flex justifyContent='center'>
               {props.pageContext.data.map(data => (
-                // <Link to='/scholars'>
-                  <Box width={1 / 4} position='relative'>
+                <Box width={1 / 4} position='relative'>
+                  <Link to='/scholars'>
                     <GatsbyImage fluid={data.image} />
                     <Box position='absolute' left={0} right={0} top={0} py={5}>
                       <Heading size='md' textAlign='center'>
                         {data.title}
                       </Heading>
                     </Box>
-                  </Box>
-                // </Link>
+                  </Link>
+                </Box>
               ))}
             </Flex>
           </Box>
@@ -108,7 +108,7 @@ const LandingComponent = props => {
               <Flex flexWrap='wrap'>
                 <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
                   <Image width='125px' src='/conversation.svg' />
-                  <Heading width='100%' size='md' textAlign='center' pt={1}>
+                  <Heading width='100%' size='md' textAlign='center' pt={2}>
                     บอก… เรื่องน่ารู้สำหรับคนอยากเรียนต่อ
                   </Heading>
                   <Text width='100%' textAlign='center'>
@@ -117,37 +117,37 @@ const LandingComponent = props => {
                     ที่บอกบุญคัดสรรมาบอกคุณ
                   </Text>
                 </Flex>
-                <Box width={1 / 2} p={8}>
-                  <Text>IMAGE</Text>
-                  <Heading size='md' textAlign='center'>
+                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                  <Image width='125px' src='/heart.svg' />
+                  <Heading width='100%' size='md' textAlign='center' pt={2}>
                     บอก… ว่าทุนไหนที่ใช่คุณ
                   </Heading>
-                  <Text textAlign='center'>
+                  <Text width='100%' textAlign='center'>
                     เหมาะกับทุนไหน เราบอกได้ ด้วยฟีลเตอร์ของบอกบุญ
                     คุณจึงสามารถค้นพบทุนที่เหมาะสม กับคุณได้อย่างง่ายแค่ปลายนิ้ว
                   </Text>
-                </Box>
-                <Box width={1 / 2} p={8}>
-                  <Text>IMAGE</Text>
-                  <Heading size='md' textAlign='center'>
+                </Flex>
+                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                  <Image width='125px' src='/contract.svg' />
+                  <Heading width='100%' size='md' textAlign='center' pt={2}>
                     บอก... วิธีจัดการกับเอกสารสุดยุ่งยาก
                   </Heading>
-                  <Text textAlign='center'>
+                  <Text width='100%' textAlign='center'>
                     ไม่ต้องจัดการเอกสารที่ยุ่งยากเองอีกต่อไป
                     ด้วยบริการจัดการเอกสารสำหรับการเรียนต่อ จาก agency
                     ผู้เชี่ยวชาญที่น่าเชื่อถือ
                   </Text>
-                </Box>
-                <Box width={1 / 2} p={8}>
-                  <Text>IMAGE</Text>
-                  <Heading size='md' textAlign='center'>
+                </Flex>
+                <Flex flexWrap='wrap' width={1 / 2} p={8} justifyContent='center'>
+                  <Image width='125px' src='/clock.svg' />
+                  <Heading width='100%' size='md' textAlign='center' pt={2}>
                     บอก… ว่าถึงเวลาต้องทำอะไร
                   </Heading>
-                  <Text textAlign='center'>
+                  <Text width='100%' textAlign='center'>
                     เพราะเราแจ้งเตือนทุกความ เคลื่อนไหวเกี่ยวกับทุนที่คุณสนใจ
                     คุณจึงไม่พลาดทุกกิจกรรมและคว้า โอกาสไว้ได้ก่อนใคร
                   </Text>
-                </Box>
+                </Flex>
               </Flex>
             </Box>
           </Box>
