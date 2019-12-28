@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{TPOp:function(n,t,a){"use strict";a.r(t);var e=a("FdF9"),d=a("qKvR");t.default=function(n){return Object(d.d)(e.default.Fragment,null,"Card ",n.pageContext.data.id)}}}]);
-//# sourceMappingURL=component---src-templates-scholars-viewing-components-index-jsx-e4485115c0c12a492eb9.js.map
