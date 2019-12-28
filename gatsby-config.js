@@ -74,7 +74,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-feed`,
     `gatsby-plugin-react-helmet`,
   ],
 }
