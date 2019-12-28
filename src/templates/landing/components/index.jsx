@@ -10,7 +10,7 @@ import {
   Box,
   Flex,
   Divider,
-  Stack as ChakraStack,
+  Link as ChakraLink,
   Input,
   Image,
   Button,
@@ -173,7 +173,7 @@ const LandingComponent = props => {
       <Box pt={48}>
         <Image src='/user.png' />
       </Box>
-      <Box pt={48} pb={64}>
+      <Box pt={48}>
         <Heading size='xl' textAlign='center' fontWeight='bold'>FAQ</Heading>
         <Flex justifyContent='center'>
           <Box width={18 / 24}>
@@ -190,6 +190,12 @@ const LandingComponent = props => {
               <Text>ได้ มีทุนจำนวนมากที่เปิดรับสมัครแต่ไม่ใช้เกรดในการตัดสินใจ โดยอาจใช้คุณสมบัติอื่นแทน เช่น กิจกรรมจิตอาสา ความเป็นเลิศทางด้านกีฬา ผลงานการวิจัย เป็นต้น</Text>
             </Box>
           </Box>
+        </Flex>
+      </Box>
+      <Box pt={48} pb={64}>
+        <Heading size='xl' textAlign='center' fontWeight='bold'>SOCIALS</Heading>
+        <Flex justifyContent='center' pt={10}>
+          <ChakraLink href="https://facebook.com/BoxThun" isExternal>Facebook</ChakraLink>
         </Flex>
       </Box>
     </React.Fragment>
