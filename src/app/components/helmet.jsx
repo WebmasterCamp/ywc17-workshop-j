@@ -6,8 +6,8 @@ const Helmet = props => {
   return (
     <ReactHelmet
       htmlAttributes={{ lang: 'en' }}
-      defaultTitle={`BorkThun`}
-      titleTemplate={`%s · BorkThun`}
+      defaultTitle={`BoxTun`}
+      titleTemplate={`%s · BoxTun`}
       link={[
         {
           href: `/static/icon.png`,

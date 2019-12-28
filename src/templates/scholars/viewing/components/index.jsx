@@ -27,16 +27,16 @@ const ScholariewingComponent = props => {
         separator={<Icon color='gray.300' name='chevron-right' />}>
         <BreadcrumbItem>
           <Link to='/'>
-            <Text>หน้าแรก</Text>
+            <Text fontFamily='Prompt'>หน้าแรก</Text>
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
           <Link to='/scholars'>
-            <Text>ทุนทั้งหมด</Text>
+            <Text fontFamily='Prompt'>ทุนทั้งหมด</Text>
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <Text color='#F98770'>{data.name}</Text>
+          <Text color='#F98770' fontFamily='Prompt'>{data.name}</Text>
         </BreadcrumbItem>
       </Breadcrumb>
       <Box bg='white' p={12} mt={6}>

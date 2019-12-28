@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 
 import Img from 'gatsby-image'
 
+import { database } from '../../../../../content/database/scholarship'
+
 import {
   Icon,
   Box,
@@ -26,16 +28,16 @@ const ComparingComponent = props => {
         separator={<Icon color='gray.300' name='chevron-right' />}>
         <BreadcrumbItem>
           <Link to='/'>
-            <Text>หน้าแรก</Text>
+            <Text fontFamily='Prompt'>หน้าแรก</Text>
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
           <Link to='/scholars'>
-            <Text>ทุนทั้งหมด</Text>
+            <Text fontFamily='Prompt'>ทุนทั้งหมด</Text>
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <Text color='#F98770'>เปรียบเทียบทุนการศึกษาต่อ</Text>
+          <Text color='#F98770' fontFamily='Prompt'>เปรียบเทียบทุนการศึกษาต่อ</Text>
         </BreadcrumbItem>
       </Breadcrumb>
       <Heading color='#F98770' size='lg'>
@@ -50,39 +52,52 @@ const ComparingComponent = props => {
             <Box w='150px' h='150px' mx='auto' mb={4}>
               <Img fluid={data.image} />
             </Box>
-            <Text>{data.name}</Text>
+            <Text fontWeight='bold'>{data.name}</Text>
           </Box>
         ))}
 
         <Box>วันรับสมัครทุน</Box>
-        <Box>2 สิงหาคม - 20 สิงหาคม 2562</Box>
-        <Box>2 สิงหาคม - 20 สิงหาคม 2562</Box>
+        {props.pageContext.data.map(
+          data =>
+            console.log(data) || (
+              <Box>
+                {data.start_date} - {data.due_date}
+              </Box>
+            )
+        )}
 
         <Box>หลักสูตร</Box>
-        <Box>4-6 เดือน</Box>
-        <Box>4-6 เดือน</Box>
+        {props.pageContext.data.map(
+          data => console.log(data) || <Box>{data.duration}</Box>
+        )}
 
         <Box>ประเภททุน</Box>
-        <Box>Lorem ipsum dolor sit amet,</Box>
-        <Box>Lorem ipsum dolor sit amet,</Box>
+        {props.pageContext.data.map(
+          data =>
+            console.log(data) || (
+              <Box>
+                {
+                  database.scholarship_types.filter(
+                    o => o.id === data.scholarship_type
+                  )[0].name
+                }
+              </Box>
+            )
+        )}
 
         <Box>จำนวนเปิดรับ</Box>
-        <Box>Lorem ipsum dolor sit amet,</Box>
-        <Box>Lorem ipsum dolor sit amet,</Box>
+        {props.pageContext.data.map(
+          data => console.log(data) || <Box>{data.amount}</Box>
+        )}
 
         <Box>คุณสมบัติ</Box>
-        <Box>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod
-          temporin cididunt ut labore et dolore magnaaliqua. Ut enim ad minim
-          veniam,quisnostrud e xercitationullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
-        </Box>
-        <Box>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod
-          temporin cididunt ut labore et dolore magnaaliqua. Ut enim ad minim
-          veniam,quisnostrud e xercitationullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
-        </Box>
+        {props.pageContext.data.map(data => (
+          <Box>
+            {data.qualifications.map(qualification => (
+              <Box>- {qualification}</Box>
+            ))}
+          </Box>
+        ))}
       </Grid>
     </Box>
   )

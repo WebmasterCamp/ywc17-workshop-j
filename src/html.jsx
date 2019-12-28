@@ -22,7 +22,7 @@ const HTMLComponent = props => {
         <link href='/icon.png' rel='shortcut icon' type='image/png' />
         <link href='/icon.png' rel='apple-touch-icon-precomposed' />
         <link
-          href='https://fonts.googleapis.com/css?family=Prompt&display=swap'
+          href='https://fonts.googleapis.com/css?family=Montserrat|Prompt&display=swap'
           rel='stylesheet'
         />
         {headComponents}

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
-import { Flex, Avatar, Box, Button } from '@chakra-ui/core'
+import { Flex, Image, Box, Button } from '@chakra-ui/core'
 
 const HeaderComponent = props => {
   return (
@@ -13,7 +13,7 @@ const HeaderComponent = props => {
       py={4}
       bg='#5A6C73'
       zIndex={1}>
-      <Avatar name='Logo' size='xs' />
+      <Image size='sm' src='/logo.png' height='40px' width='auto' />
       <Flex align='center' justifyContent='center'>
         <Box px={4} color='white'>
           <Link to='/'>Home</Link>
@@ -23,7 +23,7 @@ const HeaderComponent = props => {
             Scholars
           </Link>
         </Box>
-        <Button bg='#F98770' color='white'>Login</Button>
+        <Button bg='#F98770' color='white' ml={2}>Login</Button>
       </Flex>
     </Flex>
   )
