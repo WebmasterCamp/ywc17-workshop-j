@@ -12,11 +12,13 @@ exports.createPages = async ({ graphql, actions }) => {
     path: '/scholars',
     component: path.resolve('./src/templates/scholars/listing/components/index.jsx'),
     context: {
-      data: database,
+      scholarships: database.scholarships,
+      countries: database.countries,
+      education_levels: database.education_levels,
     },
   })
 
-  database.map(data => {
+  database.scholarships.map(data => {
     createPage({
       path: `/scholars/${data.id}`,
       component: path.resolve(`./src/templates/scholars/viewing/components/index.jsx`),

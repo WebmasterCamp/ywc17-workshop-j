@@ -11,7 +11,8 @@ const HeaderComponent = props => {
       justifyContent='space-between'
       px={8}
       py={4}
-      shadow='0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+      bg='#5A6C73'
+      zIndex={1}
     >
       <Avatar name='Logo' size='xs' />
       <Flex align='center' justifyContent='center'>

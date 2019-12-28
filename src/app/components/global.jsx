@@ -11,6 +11,7 @@ const GlobalComponent = props => {
         #___gatsby,
         #gatsby-focus-wrapper {
           height: 100%;
+          color: #707070;
         }
       `}
     />

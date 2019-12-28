@@ -2,7 +2,7 @@ import React from 'react'
 
 const ScholariewingComponent = props => {
   return (
-    <>yeet</>
+    <>Card {props.pageContext.data.id}</>
   )
 }
 
