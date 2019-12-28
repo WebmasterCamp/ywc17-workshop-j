@@ -23,14 +23,119 @@ exports.createPages = async ({ graphql, actions }) => {
     },
   })
 
-  database.scholarships.map(data => {
+  const res = await graphql(`
+    query LandingQuery {
+      jp: file(relativePath: {eq: "landing.jp.png"}) {
+        childImageSharp {
+          fluid (maxWidth: 300, quality: 80) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcSetWebp
+            tracedSVG
+            srcWebp
+          }
+        }
+      }
+      cn: file(relativePath: {eq: "landing.cn.png"}) {
+        childImageSharp {
+          fluid (maxWidth: 300, quality: 80) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcSetWebp
+            tracedSVG
+            srcWebp
+          }
+        }
+      }
+      us: file(relativePath: {eq: "landing.us.png"}) {
+        childImageSharp {
+          fluid (maxWidth: 300, quality: 80) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcSetWebp
+            tracedSVG
+            srcWebp
+          }
+        }
+      }
+      en: file(relativePath: {eq: "landing.en.png"}) {
+        childImageSharp {
+          fluid (maxWidth: 300, quality: 80) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcSetWebp
+            tracedSVG
+            srcWebp
+          }
+        }
+      }
+    }
+  `)
+
+  createPage({
+    path: '/',
+    component: path.resolve(
+      `./src/templates/landing/components/index.jsx`
+    ),
+    context: {
+      data: [
+        {
+          title: 'ทุนอังกฤษ',
+          image: res.data.en.childImageSharp.fluid,
+        },
+        {
+          title: 'ทุนอเมริกา',
+          image: res.data.us.childImageSharp.fluid,
+        },
+        {
+          title: 'ทุนจีน',
+          image: res.data.cn.childImageSharp.fluid,
+        },
+        {
+          title: 'ทุนญี่ปุ่น',
+          image: res.data.jp.childImageSharp.fluid,
+        },
+      ]
+    }
+  })
+
+  await database.scholarships.map(async data => {
+    const res = await graphql(`
+      query Scholarship3Query {
+        image: file(relativePath: {eq: "scholarship.${data.id}.png"}) {
+          childImageSharp {
+            fluid (maxWidth: 200, quality: 80) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcSetWebp
+              tracedSVG
+              srcWebp
+            }
+          }
+        }
+      }
+    `)
+
     createPage({
       path: `/scholars/${data.id}`,
       component: path.resolve(
         `./src/templates/scholars/viewing/components/index.jsx`
       ),
       context: {
-        data,
+        data: {
+          image: res.data.image.childImageSharp.fluid,
+          ...data,
+        },
       },
     })
   })

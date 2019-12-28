@@ -1,8 +1,11 @@
+import { times } from 'lodash'
 import React from 'react'
+
+import { FaStar } from 'react-icons/fa'
 
 import { Link } from 'gatsby'
 
-import { Box, Checkbox, Flex, Heading, Text, Tag } from '@chakra-ui/core'
+import { Box, Checkbox, Flex, Icon, Heading, Text, Tag } from '@chakra-ui/core'
 
 const CardComponent = props => {
   const {compare, data, onSelect, ...database} = props
@@ -27,15 +30,23 @@ const CardComponent = props => {
         <Text mb='5px'>
           สาขา : {database.departments.filter(o => o.id === data.department)[0].name}
         </Text>
+        <Flex py={2} alignItems='center'>
+          {times(data.rating, () => {
+            return (
+              <Box><FaStar color='#ECC94B' /></Box>
+            )
+          })}
+        </Flex>
         <Tag
           fontSize='14px'
           size='small'
           px='10px'
           mb='50px'
-          bg='#F98770'
+          bg={data.ongoing ? '#F98770' : '#EFF0F2'}
           borderRadius={10}
-          color='white'>
-          เปิดรับสมัคร
+          fontWeight='bold'
+          color={data.ongoing ? 'white' : '#707070'}>
+          {data.ongoing ? 'เปิดรับสมัคร' : 'ปิดรับสมัครแล้ว'}
         </Tag>
         <Text>ญี่ปุ่น</Text>
         <Text>รับสมัครถึง 31 มีนาคม 2563</Text>

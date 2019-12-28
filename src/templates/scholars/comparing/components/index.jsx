@@ -47,7 +47,10 @@ const ComparingComponent = props => {
         <Box></Box>
         {props.pageContext.data.map(data => (
           <Box>
-            <Img fluid={data.image} />
+            <Box w='150px' h='150px'>
+              <Img fluid={data.image} />
+            </Box>
+            <Text>{data.name}</Text>
           </Box>
         ))}
 

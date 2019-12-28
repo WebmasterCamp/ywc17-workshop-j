@@ -8,6 +8,7 @@ exports.database = {
       department: '1',
       education_level: '1',
       scholarship_type: '1',
+      rating: 4,
     },
     {
       id: '2',
@@ -17,6 +18,7 @@ exports.database = {
       department: '2',
       education_level: '2',
       scholarship_type: '2',
+      rating: 2,
     },
   ],
   countries: [
